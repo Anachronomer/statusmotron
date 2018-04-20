@@ -20,7 +20,9 @@ defmodule StatusmotronWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", StatusmotronWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", StatusmotronWeb do
+    pipe_through :api
+
+    post "/set_status", StatusController, :set_status
+  end
 end

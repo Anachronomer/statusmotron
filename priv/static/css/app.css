@@ -75,3 +75,7 @@ body, form, ul, table {
     border-bottom: 0;
   }
 }
+
+h2 {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}

@@ -6,6 +6,10 @@ defmodule Statusmotron.Application do
   def start(_type, _args) do
     import Supervisor.Spec
 
+    # Create an ETS table for reasons...
+    :ets.new(:dumping_ground, [:named_table, :public])
+    :ets.insert(:dumping_ground, { :color, "green" })
+
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
