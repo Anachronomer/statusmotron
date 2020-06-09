@@ -23,6 +23,9 @@ config :nerves, source_date_epoch: "1591720889"
 
 config :logger, backends: [RingLogger]
 
+import_config "../../statuslight_control/config/config.exs"
+import_config "../../statusmotron_ui/config/config.exs"
+
 if Mix.target() != :host do
   import_config "target.exs"
 end
