@@ -1,4 +1,4 @@
-defmodule StatusmotronControl.Application do
+defmodule StatuslightFw.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,12 +8,12 @@ defmodule StatusmotronControl.Application do
   def start(_type, _args) do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: StatusmotronControl.Supervisor]
+    opts = [strategy: :one_for_one, name: StatuslightFw.Supervisor]
     children =
       [
         # Children for all targets
-        # Starts a worker by calling: StatusmotronControl.Worker.start_link(arg)
-        # {StatusmotronControl.Worker, arg},
+        # Starts a worker by calling: StatuslightFw.Worker.start_link(arg)
+        # {StatuslightFw.Worker, arg},
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)
@@ -23,20 +23,20 @@ defmodule StatusmotronControl.Application do
   def children(:host) do
     [
       # Children that only run on the host
-      # Starts a worker by calling: StatusmotronControl.Worker.start_link(arg)
-      # {StatusmotronControl.Worker, arg},
+      # Starts a worker by calling: StatuslightFw.Worker.start_link(arg)
+      # {StatuslightFw.Worker, arg},
     ]
   end
 
   def children(_target) do
     [
       # Children for all targets except host
-      # Starts a worker by calling: StatusmotronControl.Worker.start_link(arg)
-      # {StatusmotronControl.Worker, arg},
+      # Starts a worker by calling: StatuslightFw.Worker.start_link(arg)
+      # {StatuslightFw.Worker, arg},
     ]
   end
 
   def target() do
-    Application.get_env(:statusmotron_control, :target)
+    Application.get_env(:statuslight_fw, :target)
   end
 end
