@@ -1,4 +1,4 @@
-# StatusmotronControl
+# StatuslightFw
 
 **TODO: Add description**
 

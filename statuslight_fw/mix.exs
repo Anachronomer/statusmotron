@@ -1,7 +1,7 @@
-defmodule StatusmotronControl.MixProject do
+defmodule StatuslightFw.MixProject do
   use Mix.Project
 
-  @app :statusmotron_control
+  @app :statuslight_fw
   @version "0.1.0"
   @all_targets [:rpi, :rpi0, :rpi2, :rpi3, :rpi3a, :rpi4, :bbb, :x86_64]
 
@@ -30,7 +30,7 @@ defmodule StatusmotronControl.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {StatusmotronControl.Application, []},
+      mod: {StatuslightFw.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

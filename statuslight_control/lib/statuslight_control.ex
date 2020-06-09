@@ -1,6 +1,6 @@
-defmodule StatusmotronControl do
+defmodule StatuslightControl do
   @moduledoc """
-  Documentation for StatusmotronControl.
+  Documentation for `StatuslightControl`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule StatusmotronControl do
 
   ## Examples
 
-      iex> StatusmotronControl.hello
+      iex> StatuslightControl.hello()
       :world
 
   """
