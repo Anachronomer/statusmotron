@@ -1,5 +1,5 @@
-defmodule StatusmotronWeb.PageControllerTest do
-  use StatusmotronWeb.ConnCase
+defmodule StatusmotronUIWeb.PageControllerTest do
+  use StatusmotronUIWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

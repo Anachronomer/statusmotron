@@ -1,9 +1,9 @@
-defmodule Statusmotron.Mixfile do
+defmodule StatusmotronUI.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :statusmotron,
+      app: :statusmotron_ui,
       version: "0.0.1",
       elixir: "~> 1.10",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -18,7 +18,7 @@ defmodule Statusmotron.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Statusmotron.Application, []},
+      mod: {StatusmotronUI.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
