@@ -12,6 +12,7 @@ defmodule Statusmotron.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      {Phoenix.PubSub, name: Statusmotron.PubSub},
       # Start the endpoint when the application starts
       supervisor(StatusmotronWeb.Endpoint, []),
       # Start your own worker by calling: Statusmotron.Worker.start_link(arg1, arg2, arg3)
