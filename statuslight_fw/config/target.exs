@@ -42,13 +42,22 @@ config :nerves_firmware_ssh,
 config :vintage_net,
   regulatory_domain: "US",
   config: [
-    {"usb0", %{type: VintageNetDirect}},
-    {"eth0",
-     %{
-       type: VintageNetEthernet,
-       ipv4: %{method: :dhcp}
-     }},
-    {"wlan0", %{type: VintageNetWiFi}}
+    # {"usb0", %{type: VintageNetDirect}},
+    {"wlan0",
+      %{
+        type: VintageNetWiFi,
+        vintage_net_wifi: %{
+          networks: [
+            %{
+              key_mgmt: :wpa_psk,
+              ssid: "placeholder",
+              psk: "placeholder"
+            }
+          ]
+        },
+        ipv4: %{method: :dhcp},
+      }
+    }
   ]
 
 config :mdns_lite,
