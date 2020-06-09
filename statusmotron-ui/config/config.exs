@@ -6,11 +6,11 @@
 use Mix.Config
 
 # Configures the endpoint
-config :statusmotron, StatusmotronWeb.Endpoint,
+config :statusmotron_ui, StatusmotronUIWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "QU19cDvKHYNE/Ofj9Pvwiez9FYkzmp+GP/FVXeHuT0NbLxt8IMTL4oQxu0iEWbjG",
-  render_errors: [view: StatusmotronWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: Statusmotron.PubSub
+  render_errors: [view: StatusmotronUIWeb.ErrorView, accepts: ~w(html json)],
+  pubsub_server: StatusmotronUI.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,

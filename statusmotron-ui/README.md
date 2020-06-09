@@ -1,4 +1,4 @@
-# Statusmotron
+# StatusmotronUI
 
 To start your Phoenix server:
 

@@ -1,0 +1,5 @@
+<div style="background:<%= @color %>" class="jumbotron">
+  <h1><%= gettext "%{name}", name: "StatusmotronUI" %></h2>
+  <h2>A way for your family to know whether you are working or just locking yourself in the office to get away from it all.</h2>
+</div>
+

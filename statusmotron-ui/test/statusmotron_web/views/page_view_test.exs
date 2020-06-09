@@ -1,3 +1,3 @@
-defmodule StatusmotronWeb.PageViewTest do
-  use StatusmotronWeb.ConnCase, async: true
+defmodule StatusmotronUIWeb.PageViewTest do
+  use StatusmotronUIWeb.ConnCase, async: true
 end
