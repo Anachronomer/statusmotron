@@ -1,20 +1,23 @@
 defmodule StatusmotronUIWeb.StatusController do
   use StatusmotronUIWeb, :controller
+  require StatuslightControl.Statuslight
 
   def set_status(conn, params) do
-    :ets.insert(:dumping_ground, color: color_for_status(params["status"]))
+    color = color_for_status(params["status"])
+    :ets.insert(:dumping_ground, color: color)
+    StatuslightControl.Statuslight.set_color(color)
     json(conn, %{ color: :ets.lookup(:dumping_ground, :color)[:color] })
   end
 
   def color_for_status("idle") do
-    "green"
+    "#00FF00"
   end
 
   def color_for_status("busy") do
-    "yellow"
+    "#FFFF00"
   end
 
   def color_for_status("dnd") do
-    "red"
+    "#FF0000"
   end
 end

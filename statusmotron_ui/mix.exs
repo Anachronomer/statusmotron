@@ -39,7 +39,8 @@ defmodule StatusmotronUI.Mixfile do
       {:gettext, "~> 0.11"},
       {:plug_cowboy, "~> 2.1"},
       {:plug, "~>1.7"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:statuslight_control, path: "../statuslight_control", runtime: Mix.env == :prod}
     ]
   end
 end
