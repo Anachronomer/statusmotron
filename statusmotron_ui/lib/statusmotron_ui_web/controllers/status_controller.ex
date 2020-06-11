@@ -20,4 +20,8 @@ defmodule StatusmotronUIWeb.StatusController do
   def color_for_status("dnd") do
     "#FF0000"
   end
+
+  def color_for_status("away") do
+    "#000000"
+  end
 end
