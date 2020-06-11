@@ -53,6 +53,7 @@ Note, this assumes you are using a Raspberry Pi 0 W.  Change the MIX_TARGET belo
   * Expanded status definition capabilities and 
   * Tests, robustness enhancement, etc.
   * Broader, configurable hardware support
+  * Check out [MQTT](http://mqtt.org/) for status setting rather than a string-based json API.
   
 ## Thanks / Acknowledgements
   * Thanks to [Joel Byler](https://github.com/joelbyler) for guidance, answering questions and pointing me to his own Nerves based lamp project from which this project draws some ideas
