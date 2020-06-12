@@ -27,9 +27,6 @@ gamma = [
   215, 218, 220, 223, 225, 228, 231, 233, 236, 239, 241, 244, 247, 249, 252, 255
 ]
 
-config :blinkchain,
-  canvas: {12,1}
-
 config :blinkchain, :channel0,
   pin: 18,
   brightness: 32,

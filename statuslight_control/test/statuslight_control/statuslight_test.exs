@@ -1,15 +1,14 @@
-defmodule StatuslightControl.StatuslightTest do
+defmodule StatuslightControl.StatuslightGenserverTest do
   use ExUnit.Case
-  import ExUnit.CaptureIO
+  alias StatuslightControl.Statuslight
 
-  setup do
-    #Maybe need to do this through supervision instead
-    StatuslightControl.Statuslight.stop
-    StatuslightControl.Statuslight.start_link(IORenderer)
-    :ok
+  test "current_color" do
+    :sys.replace_state(Statuslight, fn _ -> %{color: "green"} end)
+    assert Statuslight.current_color() == "green"
   end
 
   test "set_color" do
-    assert capture_io(fn -> StatuslightControl.Statuslight.set_color("#FFFFFF") end) == "TODO"
+    Statuslight.set_color("#FFFFFF")
+    assert :sys.get_state(Statuslight) == %{color: "#FFFFFF"}
   end
 end

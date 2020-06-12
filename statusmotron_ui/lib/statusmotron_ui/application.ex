@@ -6,17 +6,11 @@ defmodule StatusmotronUI.Application do
   def start(_type, _args) do
     import Supervisor.Spec
 
-    # Create an ETS table for reasons...
-    :ets.new(:dumping_ground, [:named_table, :public])
-    :ets.insert(:dumping_ground, { :color, "green" })
-
     # Define workers and child supervisors to be supervised
     children = [
       {Phoenix.PubSub, name: StatusmotronUI.PubSub},
       # Start the endpoint when the application starts
-      supervisor(StatusmotronUIWeb.Endpoint, []),
-      # Start your own worker by calling: StatusmotronUI.Worker.start_link(arg1, arg2, arg3)
-      # worker(StatusmotronUI.Worker, [arg1, arg2, arg3]),
+      supervisor(StatusmotronUIWeb.Endpoint, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

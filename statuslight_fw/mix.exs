@@ -43,8 +43,7 @@ defmodule StatuslightFw.MixProject do
       {:shoehorn, "~> 0.6"},
       {:ring_logger, "~> 0.6"},
       {:toolshed, "~> 0.2"},
-      {:statuslight_control, path: "../statuslight_control", runtime: Mix.env == :prod},
-      {:statusmotron_ui, path: "../statusmotron_ui", runtime: Mix.env == :prod},
+      {:statusmotron_ui, path: "../statusmotron_ui"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
