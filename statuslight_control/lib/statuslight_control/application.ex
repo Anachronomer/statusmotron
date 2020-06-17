@@ -8,7 +8,7 @@ defmodule StatuslightControl.Application do
   def start(_type, _args) do
     children = [
       # Starts a worker by calling: StatuslightControl.Worker.start_link(arg)
-      {StatuslightControl.Statuslight, Application.get_env(:statuslight_control, :renderer)}
+      {StatuslightControl.Statuslight, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
