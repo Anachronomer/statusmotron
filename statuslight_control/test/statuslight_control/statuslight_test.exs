@@ -1,4 +1,4 @@
-defmodule StatuslightControl.StatuslightGenserverTest do
+defmodule StatuslightControl.StatuslightTest do
   use ExUnit.Case
   alias StatuslightControl.Statuslight
 
